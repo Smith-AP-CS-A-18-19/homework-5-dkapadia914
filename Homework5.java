@@ -1,10 +1,17 @@
 public class Homework5 {
-
+/*
+* Dev Kapadia
+*/
 	/* Finish the constructor and create any necessary instance
 	 * variables
 	 */
+	private String str;
+	private static int second;
+	private static int first;
 	public Homework5(String s, int a, int b) {
-
+		str = s;
+		first = a;
+		second = b;
 	}
 
 	/* Return a substring of the stored String, starting at index with
@@ -16,6 +23,16 @@ public class Homework5 {
 	 * substring method in the String class
 	 */
 	public String substring(int index, int length) {
+		int limit = str.length();
+		if ((limit - index) > length) {
+			String substr = str.substring(index, index + length);
+			return substr;
+		}
+		else {
+			length = limit - index;
+			String substr = str.substring(index, index + length);
+			return substr;
+		}
 
 	}
 
@@ -25,14 +42,29 @@ public class Homework5 {
 	 * an example
 	 */
 	public boolean contains(String s) {
-		
+		int findStuff = str.indexOf(s);
+		if (findStuff > -1) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	/* Return the larger of the two stored numbers
 	 */
 	public static int max() {
+		if (first > second) {
+			return first;
+		}
+		else if (second > first) {
+			return second;
+		}
+		else {
+			return -1;
+		}
+		}
 
-	}
 
 	public static void main(String[] args) {
 		int exitCode = 0;
